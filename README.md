@@ -14,4 +14,8 @@
     - The complete food review app with React and Redux - Only Front-end.
     - All the code is in the repo.
 
-4. 
+4. PokeTimes App: From [NetNinja Youtube](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+    - Learning React + Redux - A simple app to brush up React + Redux
+
+5. react-redux-firebase-app: From [NetNinja Youtube](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iWstfXntcj8f-dFZ4UtlN3)
+    - Build a project with React, Redux, Firebase authentication, Firestore DB and Functions.
