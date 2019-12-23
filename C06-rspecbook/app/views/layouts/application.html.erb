@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BigCo Company Directory</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">BigCo, Inc.</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About Us", '#', id: "about-us-click" %></li>
+        <li><%= link_to "Contact Us", '#' %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <% if administrator? %>
+            <li><%= link_to 'Users', users_path %></li>
+          <% end %>
+          <li><%= link_to 'Log Out', logout_path %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="btn-group btn-group-justified">
+    <% ('A'..'Z').each do |letter| %>
+      <%= link_to letter, contacts_path(letter: letter), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'All', contacts_path, class: 'btn btn-default' %>
+  </div>
+
+  <% flash.each do |name, msg| %>
+    <div class='alert alert-<%= name == "notice" ? "success" : "error" %>'>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= msg %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+  
+  
+</div>
+
+<div id="finalmodal" style="display: none;">
+  <h4 class="modal-title">About BigCo, Inc.</h4>
+   <p>BigCo produces the finest widgets in all the land.</p>
+   <button type="button" class="close btn btn-default">Close</button>
+</div>
+
+
+<script type="text/javascript">
+  var aboutUs = document.querySelector('#about-us-click');
+  var finalModal = document.querySelector('#finalmodal');
+  var modal = document.querySelector('.modal1');
+  var close = document.querySelector('.close');
+  
+  // finalModal.style.display = "none";
+  
+  aboutUs.addEventListener('click', (e) => {
+    finalModal.innerHTML = "abc";
+  });
+  
+  close.addEventListener('click', () => {
+    // finalModal.innerHTML = "";
+  });
+</script>
+  </body>
+</html>

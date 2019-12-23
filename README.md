@@ -19,3 +19,7 @@
 
 5. react-redux-firebase-app: From [NetNinja Youtube](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iWstfXntcj8f-dFZ4UtlN3)
     - Build a project with React, Redux, Firebase authentication, Firestore DB and Functions.
+
+6. RSpec Learning: From [RSpec Book](https://leanpub.com/everydayrailsrspec)
+
+7. 
