@@ -22,4 +22,4 @@
 
 6. RSpec Learning: From [RSpec Book](https://leanpub.com/everydayrailsrspec)
 
-7. 
+7. Marketplace API: Rails API Learning From [API on Rails Online](http://apionrails.icalialabs.com/book)
